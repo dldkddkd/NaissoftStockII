@@ -10,19 +10,19 @@ void startLogo()
 
 	Sleep(500);
 	textcolor(8);
-	gotoxy(50, 10), printf("ⓒ 2016 Naissoft");
+	gotoxy(48, 15), printf("ⓒ 2013~2016 Naissoft");
 	Sleep(65);
 	textcolor(7);
-	gotoxy(50, 10), printf("ⓒ 2016 Naissoft");
+	gotoxy(48, 15), printf("ⓒ 2013~2016 Naissoft");
 	Sleep(65);
 	textcolor(15);
-	gotoxy(50, 10), printf("ⓒ 2016 Naissoft");
+	gotoxy(48, 15), printf("ⓒ 2013~2016 Naissoft");
 	Sleep(1000);
 	textcolor(7);
-	gotoxy(50, 10), printf("ⓒ 2016 Naissoft");
+	gotoxy(48, 15), printf("ⓒ 2013~2016 Naissoft");
 	Sleep(65);
 	textcolor(8);
-	gotoxy(50, 10), printf("ⓒ 2016 Naissoft");
+	gotoxy(48, 15), printf("ⓒ 2013~2016 Naissoft");
 	Sleep(65);
 	system("cls");
 	textcolor(7);
@@ -55,8 +55,7 @@ void startLogo()
 
 void printMainMenu()
 {
-	printf("\n\n\t\t\t\t\t         Stock II - 주식 게임");
-	printf("\n\n\t\t\t\t\t          ⓒ 2016 Naissoft.");
+	printf("\n\n\t\t\t\t\t         Stock II - 주식 게임 2");
 	printf("\n\n\n\t\t\t\t\t    항목을 선택해 주시기 바랍니다.");
 	printf("\n\n\t\t\t\t\t        「 새로 시작하기 : 1」");
 	printf("\n\n\t\t\t\t\t        「  불 러 오 기  : 2」");

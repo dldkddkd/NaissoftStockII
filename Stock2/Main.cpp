@@ -10,7 +10,7 @@ int main(void)
 	int menu, cnt, order;
 	char c, pausemenu;
 
-	system("title 주식 게임");
+	system("title Stock2 - 주식 게임 2");
 
 	system("mode con: cols=120 lines=40");
 
