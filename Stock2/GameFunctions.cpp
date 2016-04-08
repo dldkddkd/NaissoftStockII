@@ -61,7 +61,7 @@ void init()
 void ShowMain()
 {
 	gotoxy(0, 1);
-	printf(" Stock II - Naissoft 주식 게임 2\n ver α 1.0.0405\n\n B 사기, S 팔기, V 목록, E 저장, I 회사 정보, Esc 메뉴");
+	printf(" Stock II - Naissoft 주식 게임 2\n ver α 1.0.0408\n\n B 사기, S 팔기, V 목록, E 저장, I 회사 정보, Esc 메뉴");
 	if (timemode == 1) printf(" W 기다리기");
 	gotoxy(0, 4);
 	printf("\n 현재 내 돈 : %d원, 갚아야 할 돈 : %d원\n\n\n\n", Money, loanMoney);
@@ -319,7 +319,7 @@ void DrawGraph(int company)
 	int j = 0;
 	for (int i = 47; i >= 0; i--)
 	{
-		if (GraphData[company][i] != 0)
+		if (GraphData[company][i] > 0 && GraphData[company][i] <= 24000)
 		{
 			gotoxy(7 + j, 36 - ((int)(GraphData[company][i] / 2000) - 1));
 			printf("*");

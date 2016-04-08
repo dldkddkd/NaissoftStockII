@@ -14,7 +14,7 @@ bool ifGood[MAX_COMPANY];
 char *CompanyName[MAX_COMPANY] =
 {
 	"Naissoft",
-	"앵그리소프트웨어너드",
+	"HawTech",
 	"암겨농업",
 	"MK Electronics",
 	"폭펭군수",
@@ -22,7 +22,7 @@ char *CompanyName[MAX_COMPANY] =
 	"KJS 시스템",
 	"Fruit",
 	"수배자 모터스",
-	"기야조선업",
+	"기야조선",
 };
 
 void ChangeStockPrice()
