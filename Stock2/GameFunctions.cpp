@@ -33,7 +33,7 @@ char *BadNews[MAX_NEWS] =
 char *Infos[MAX_COMPANY] =
 {
 	" Naissoft는 자칭 대한민국 최대 규모의 소프트웨어 개발 업체입니다.\n 유틸리티, 게임 등 여러 가지 프로그램들을 개발하고 있죠.",
-	" 앵그리소프트웨어너드는 나이스소프트에 항상 밀리는 비운의 소프트웨어 업체입니다.\n 이름이 비슷하다며 앵그리 비디오 게임 너드가 소송을 걸었다는 소문이 있어요.",
+	" HawTech는 Naissoft와 양대산맥을 이루는 소프트웨어 업체입니다.",
 	" 암겨농업은 산지에서 갓 생산된 싱싱한 작물을 전국에 유통하고 식품을 만드는 회사입니다.\n 특이한 이름이 회사 마케팅에 도움을 주죠.\n 최근은 경운기 등 농기구도 생산하고 있답니다.",
 	" MK Electronics는 전자제품 생산 회사입니다.\n TV, PC, 스마트폰, 냉장고 등을 생산하죠.",
 	" 폭펭군수는 군수 물자 생산 업체입니다.\n 이름답게 폭탄을 주로 생산하는 회사예요.",
@@ -61,7 +61,7 @@ void init()
 void ShowMain()
 {
 	gotoxy(0, 1);
-	printf(" Stock II - Naissoft 주식 게임 2\n ver α 1.0.0408\n\n B 사기, S 팔기, V 목록, E 저장, I 회사 정보, Esc 메뉴");
+	printf(" Stock II - Naissoft 주식 게임 2\n ver α 1.0.0412\n\n B 사기, S 팔기, V 목록, E 저장, I 회사 정보, Esc 메뉴");
 	if (timemode == 1) printf(" W 기다리기");
 	gotoxy(0, 4);
 	printf("\n 현재 내 돈 : %d원, 갚아야 할 돈 : %d원\n\n\n\n", Money, loanMoney);
@@ -326,4 +326,19 @@ void DrawGraph(int company)
 			j++;
 		}
 	}
+}
+
+void showCompanyReport(int company)
+{
+	for (int i = 2; i < 20; i++)
+	{
+		gotoxy(80, i);
+		printf("                     ");
+	}
+	gotoxy(80, 2);
+	printf("회사 : %s", CompanyName[company]);
+	gotoxy(80, 4);
+	printf("현재 주가 : %d원", StockPrice[company]);
+	gotoxy(80, 6);
+	printf("전문가 의견 : %s", ifGood[company] ? "긍정적" : "부정적");
 }

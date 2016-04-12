@@ -50,6 +50,7 @@ int main(void)
 			system("cls");
 		}
 		ShowMain();
+		showCompanyReport(order);
 		DrawGraph(order);
 
 		gotoxy(57, 9 + order - 1);

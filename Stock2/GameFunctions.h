@@ -49,3 +49,5 @@ void loanMenu();
 void showCompanyInfo();
 
 void DrawGraph(int);
+
+void showCompanyReport(int);
