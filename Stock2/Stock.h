@@ -3,6 +3,7 @@ struct Stock
 {
 	int price;
 	int company;
+	bool ifChecked;
 
 	Stock *next;
 	Stock *prev;

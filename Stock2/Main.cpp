@@ -53,11 +53,11 @@ int main(void)
 		showCompanyReport(order);
 		DrawGraph(order);
 
-		gotoxy(57, 9 + order - 1);
+		gotoxy(57, 10 + order - 1);
 		printf("  ");
-		gotoxy(57, 9 + order + 1);
+		gotoxy(57, 10 + order + 1);
 		printf("  ");
-		gotoxy(57, 9 + order);
+		gotoxy(57, 10 + order);
 		printf("¢¸");
 
 		c = '\0';

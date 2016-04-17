@@ -193,6 +193,8 @@ void buyStock(int order, int amount)
 void sellStock(int i)
 {
 	Stock *f = FindStock(i - 1);
+	if (f == NULL) return;
+
 	printf("\n 현재 %s 회사 주식의 값은 %d원이고, 팔면 %d원의 이익이 나게 됩니다.\n", CompanyName[f->company], StockPrice[f->company], StockPrice[f->company] - f->price);
 	printf(" 주식을 파시겠습니까? Y / N ");
 	char k;
@@ -207,31 +209,35 @@ void sellStock(int i)
 void showStockList()
 {
 	system("cls");
-	int j = 0;
+	int j, k;
+	char i;
+	k = 1;
 	if (Stocks <= 0)
 	{
 		printf("\n 주식이 없습니다.\n");
 	}
 	else
 	{
-		titleLine("주식 목록 보기");
-		for (int i = 0; i < MAX_COMPANY; i++)
+		do
 		{
-			printf("\n %s 주식\n", CompanyName[i]);
+			system("cls");
+			titleLine("주식 목록 보기");
+			printf("\n [ A, D로 더 보실 수 있습니다. ]\n\n");
 			j = 1;
 			for (now = head->next; now; now = now->next)
 			{
-				if (now->company == i)
-				{
-					printf("\n %d. 가격 : %d원", j, now->price);
-					j++;
-				}
+				if (j >= k && j < k + 10) printf("\n %d. 회사 : %-20s, 가격 : %d원", j, CompanyName[now->company], now->price);
+				j++;
 			}
-			printf("\n");
-		}
+			printf("\n 돌아가려면 Q를 누르세요.\n");
+			scanf(" %c", &i);
+			if (i == 'D' || i == 'd') k += 10;
+			else if (i == 'A' || i == 'a')
+			{
+				if (k > 10) k -= 10;
+			}
+		} while (i != 'Q');
 	}
-	printf("\n 돌아가려면 Enter를 누르세요.");
-	getchar();
 	system("cls");
 }
 

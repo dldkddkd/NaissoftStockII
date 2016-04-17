@@ -61,9 +61,9 @@ void init()
 void ShowMain()
 {
 	gotoxy(0, 1);
-	printf(" Stock II - Naissoft 주식 게임 2\n ver α 1.0.0412\n\n B 사기, S 팔기, V 목록, E 저장, I 회사 정보, Esc 메뉴");
-	if (timemode == 1) printf(" W 기다리기");
-	gotoxy(0, 4);
+	printf(" Stock II - Naissoft 주식 게임 2\n ver α 1.1.0417\n\n B 사기, S 팔기, V 목록, E 저장, I 회사 정보, 8 / 2 회사 선택, Esc 메뉴");
+	if (timemode == 1) printf("\n W 기다리기");
+	gotoxy(0, 5);
 	printf("\n 현재 내 돈 : %d원, 갚아야 할 돈 : %d원\n\n\n\n", Money, loanMoney);
 
 	ShowStockPrice(viewmode);
@@ -140,9 +140,9 @@ void save()
 
 void showTipNews()
 {
-	gotoxy(0, 7);
+	gotoxy(0, 8);
 	for (int i = 0; i < 80; i++) printf(" ");
-	gotoxy(0, 7);
+	gotoxy(0, 8);
 	if (rand() % 4 == 0)
 		printf(" 팁 : %s", Tips[rand() % MAX_TIP]);
 	else
@@ -161,7 +161,7 @@ void buyMenu(int order)
 	system("cls");
 	titleLine("주식 사기");
 
-	printf(" 현재 %s 회사의 주가는 %d원입니다.\n 몇 개를 구입하시겠습니까?", CompanyName[order], StockPrice[order]);
+	printf(" 현재 %s 회사의 주가는 %d원입니다.\n\n 몇 개를 구입하시겠습니까? (취소 : 0)", CompanyName[order], StockPrice[order]);
 
 	scanf("%d", &amount);
 	if (amount > 0)
@@ -176,22 +176,28 @@ void buyMenu(int order)
 
 void sellMenu()
 {
-	int i, j;
+	int i, j, k;
 	i = 1;
+	k = 1;
 	while (i != 0)
 	{
 		system("cls");
 		titleLine("주식 팔기");
-		printf("\n [ 팔 주식을 고르세요 ]\n\n");
+		printf("\n [ 팔 주식을 고르세요 -1, -2로 더 보실 수 있습니다. ]\n\n");
 		j = 1;
 		for (now = head->next; now; now = now->next)
 		{
-			printf("\n %d. 회사 : %-20s, 가격 : %d원", j, CompanyName[now->company], now->price);
+			if (j >= k && j < k + 10) printf("\n %d. 회사 : %-20s, 가격 : %d원", j, CompanyName[now->company], now->price);
 			j++;
 		}
 		printf("\n 돌아가려면 0을 선택하세요.\n");
-		scanf("%d", &i);
-		if (i != 0) sellStock(i);
+		scanf(" %d", &i);
+		if (i > 0) sellStock(i);
+		else if (i == -1) k += 10;
+		else if (i == -2)
+		{
+			if (k > 10) k -= 10;
+		}
 	}
 	system("cls");
 }
@@ -332,13 +338,13 @@ void showCompanyReport(int company)
 {
 	for (int i = 2; i < 20; i++)
 	{
-		gotoxy(80, i);
+		gotoxy(75, i);
 		printf("                     ");
 	}
-	gotoxy(80, 2);
+	gotoxy(75, 2);
 	printf("회사 : %s", CompanyName[company]);
-	gotoxy(80, 4);
+	gotoxy(75, 4);
 	printf("현재 주가 : %d원", StockPrice[company]);
-	gotoxy(80, 6);
+	gotoxy(75, 6);
 	printf("전문가 의견 : %s", ifGood[company] ? "긍정적" : "부정적");
 }
