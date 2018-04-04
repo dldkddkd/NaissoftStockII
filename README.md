@@ -1,2 +1,2 @@
 # NaissoftStockII
-Source is from https://github.com/SeunggiMoon/NaissoftStockII.
+https://github.com/SeunggiMoon/NaissoftStockII is the source.
