@@ -7,22 +7,27 @@
 
 int main(void)
 {
+	//Initialize value
 	int menu, cnt, order;
 	char c, pausemenu;
 
+	//Set window console
 	system("title Stock 2 - 주식 게임 2");
 
 	system("mode con: cols=120 lines=40");
 
+	//Copyright
 	startLogo();
 
 	printMainMenu();
 	scanf("%d", &menu);
 
+	//Initialize game setting
 	InitStock();
 	init();
 	cnt = month = day = hour = order = 0;
 
+	//TODO: if user enter default value, program should announce 'it's wrong value'
 	switch (menu)
 	{
 	case 1:
