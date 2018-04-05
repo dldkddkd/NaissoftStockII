@@ -9,7 +9,7 @@ int main(void)
 {
 	//Initialize value
 	int menu, cnt, order;
-	char c, pausemenu;
+	char key, pausemenu;
 
 	//Set window console
 	system("title Stock 2 - 주식 게임 2");
@@ -70,10 +70,10 @@ int main(void)
 		gotoxy(57, 10 + order);
 		printf("◀");
 
-		c = '\0';
-		getKey(&c);
+		key = '\0';
+		getKey(&key);
 
-		switch (c)
+		switch (key)
 		{
 		case 'b':
 		case 'B':
