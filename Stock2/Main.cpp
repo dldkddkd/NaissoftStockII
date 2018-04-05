@@ -27,7 +27,7 @@ int main(void)
 	init();
 	cnt = month = day = hour = order = 0;
 
-	//TODO: if user enter default value, program should announce 'it's wrong value'
+	
 	switch (menu)
 	{
 	case 1:
@@ -41,6 +41,7 @@ int main(void)
 		exit(0);
 		break;
 	default:
+		//TODO: if user enter default value, program should announce 'it's wrong value'
 		break;
 	}
 
