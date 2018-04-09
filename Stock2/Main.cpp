@@ -7,22 +7,27 @@
 
 int main(void)
 {
+	//Initialize value
 	int menu, cnt, order;
-	char c, pausemenu;
+	char key, pausemenu;
 
+	//Set window console
 	system("title Stock 2 - 주식 게임 2");
 
 	system("mode con: cols=120 lines=40");
 
+	//Copyright
 	startLogo();
 
 	printMainMenu();
 	scanf("%d", &menu);
 
+	//Initialize game setting
 	InitStock();
 	init();
 	cnt = month = day = hour = order = 0;
 
+	
 	switch (menu)
 	{
 	case 1:
@@ -36,6 +41,7 @@ int main(void)
 		exit(0);
 		break;
 	default:
+		//TODO: if user enter default value, program should announce 'it's wrong value'
 		break;
 	}
 
@@ -64,10 +70,10 @@ int main(void)
 		gotoxy(57, 10 + order);
 		printf("◀");
 
-		c = '\0';
-		getKey(&c);
+		key = '\0';
+		getKey(&key);
 
-		switch (c)
+		switch (key)
 		{
 		case 'b':
 		case 'B':

@@ -442,6 +442,7 @@ void drawNewspaper(int comp)
 {
 	textcolor(112);
 	
+	// x: 75 ~ 115, y: 10 ~ 35
 	for (int i = 0; i < 25; i++)
 	{
 		gotoxy(75, 10 + i);
